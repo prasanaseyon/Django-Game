@@ -1,0 +1,15 @@
+{% extends "blog/base.html" %}
+{% load static %}
+{%block title%}Math Game{%endblock%}
+
+{% block content %}
+    <h1>Math Game</h1>
+    <div id="question">hello</div>
+    <input type="text" id="answer" autocomplete="off">
+    <div id="result"></div>
+    <button><a href="{% url 'blog-home' %}">Back</a></button>
+    <script src="{% static 'blog/js/firstgame.js' %}"></script>
+
+{% endblock %}
+
+

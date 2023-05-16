@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    <div>
+        <h2>Over 155 Learning Games for Kids</h2>
+        <p class="list-group-item list-group-item-light" style="text-align: justify; color: black;">
+                
+            Lets Unbound is dedicated to providing children with free learning games that are fun. 
+            Our online games reinforce important skills that are vital to elementary students and their educational process. 
+            Lets Unbound was developed entirely by an elementary school teacher with the goal of reinforcing 
+            fundamental learning concepts in math, reading, spelling, language arts, typing, and problem solving. 
+            Because our learning games are free, students do not have to sign up or hold an account with us. 
+            Children can simply load up an activity and have fun learning online while they play!
+        </p>
+
+        <img  style="width:100%;" src="https://www.roomrecess.com/Pictures/dividerMath16Kid.gif" alt="">
+
+        {% for post in posts %}
+            <article class="media content-section">
+                {% if post.image_url %}
+                    <a href="{{ post.a_url }}"><img src="{{ post.image_url }}" alt="{{ post.name }} Image"></a>
+                {% endif %}
+
+                <div class="media-body">
+                    <p class="article-content"><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.name }}</a></p>
+                    <p class="article-content">{{ post.language }}</p>
+                    <p class="article-content">{{post.author}}</p>
+                    
+                    
+                </div>
+                {% if post.author == user %}
+                    <div>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' post.id %}">Delete</a>
+                    </div>
+                {% endif %}
+            </article>
+        {% endfor %}
+
+    
+
+    </div>
+
+    
+{% endblock content %}
+
+
+
+
+

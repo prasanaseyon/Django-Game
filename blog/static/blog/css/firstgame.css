@@ -1,0 +1,24 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+
+  h1 {
+    color: #333;
+  }
+
+  #question {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  #answer {
+    font-size: 18px;
+    padding: 5px;
+    width: 100px;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 18px;
+  }
